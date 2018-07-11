@@ -1,3 +1,7 @@
+# all hidden files
+.*
+!.gitignore
+
 # Compiled class file
 *.class
 
