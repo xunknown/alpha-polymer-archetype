@@ -14,7 +14,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<packageDirectory>${project.build.directory}/package</packageDirectory>
+		<packageDirectory>${project.build.directory}/${project.artifactId}-${project.version}</packageDirectory>
 		<mainClass>${package}.App</mainClass>
 	</properties>
 
@@ -79,19 +79,21 @@
 						<goals>
 							<goal>shade</goal>
 						</goals>
-						<configuration>
-							<transformers>
-								<transformer
-									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>${mainClass}</mainClass>
-								</transformer>
-							</transformers>
-							<!-- When true, it will attempt to create a sources jar as well -->
-							<createSourcesJar>true</createSourcesJar>
-							<createDependencyReducedPom>false</createDependencyReducedPom>
-						</configuration>
 					</execution>
 				</executions>
+				<configuration>
+					<transformers>
+						<transformer
+							implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+							<mainClass>${mainClass}</mainClass>
+						</transformer>
+					</transformers>
+					<!-- When true, it will attempt to create a sources jar as well -->
+					<createSourcesJar>false</createSourcesJar>
+					<createDependencyReducedPom>false</createDependencyReducedPom>
+					<outputDirectory>${packageDirectory}</outputDirectory>
+					<outputFile>${packageDirectory}/${project.artifactId}-${project.version}.jar</outputFile>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

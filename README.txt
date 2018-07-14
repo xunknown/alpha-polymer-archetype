@@ -2,8 +2,8 @@ use "mvn install" to install this archetype
 the archetype catalog file is: ~/.m2/repository/archetype-catalog.xml
 
 create project from this archetype, then run "mvn clean package"
-the project will package the project JAR in the target directory, with the dependency files and log4j2 config files.
-in target, use follow command to run the JAR:
+the project will package the project JAR in the target/${project.artifactId}-${project.version} directory, with the dependency files and log4j2 configuration files.
+in output directory, use follow command to run the JAR:
 java -jar <the project JAR file>
 
 change files in src/main/resources/archetype-resources 

@@ -9,7 +9,7 @@
 	<packaging>maven-archetype</packaging>
 
 	<name>alpha-polymer-archetype</name>
-	<description>alpha-polymer-archetype: with dependencies slf4j-api, log4j-slf4j-impl, log4j-core, commons-lang3, all-in-one executable JAR</description>
+	<description>alpha-polymer-archetype: with dependencies slf4j-api, log4j-slf4j-impl, log4j-core, commons-lang3, build all-in-one executable JAR.</description>
 	<build>
 		<extensions>
 			<extension>
